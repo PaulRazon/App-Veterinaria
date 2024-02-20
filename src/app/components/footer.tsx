@@ -10,7 +10,7 @@ function Footer() {
     let texts ='text-white text-2xl font-bold'
     let paragraph = 'text-xl text-white' 
   return (
-    <footer className='w-full bg-[#5C483A] flex justify-around py-9'>
+    <footer className='w-full bg-[#5C483A] flex justify-around py-9 mt-11'>
         <div className={containers}>
             <Typography
                 className={texts}

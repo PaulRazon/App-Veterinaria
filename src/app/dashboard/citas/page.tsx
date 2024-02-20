@@ -1,4 +1,9 @@
+'use client'
 import {Typography,Button, FormGroup, InputLabel, TextField, Select, MenuItem} from '@mui/material'
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 function Citas() {
   
   return (
@@ -27,21 +32,20 @@ function Citas() {
                     <MenuItem value="Salud">Salud</MenuItem>
                 </Select>
 
-                <InputLabel  className="text-white font-bold text-xl uppercase mb-4">Nombre</InputLabel>
+                <InputLabel  className="text-white font-bold text-xl uppercase mb-4">Celular</InputLabel>
                 <TextField
                 className="pb-4"
                 sx={{input:{fontSize:15 , color:'white',fontWeight:'bold'}}}
-                id="Nombre"
+                id="Celular"
                 variant="filled"
                 />
 
-                <InputLabel  className="text-white font-bold text-xl uppercase mb-4">Nombre</InputLabel>
-                <TextField
-                className="pb-4"
-                sx={{input:{fontSize:15 , color:'white',fontWeight:'bold'}}}
-                id="Nombre"
-                variant="filled"
-                />
+                <InputLabel  className="text-white font-bold text-xl uppercase mb-4">Fecha</InputLabel>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={['DatePicker']}>
+                    <DatePicker label="Agenda" className='text-white w-full' />
+                  </DemoContainer>
+                </LocalizationProvider>
             </FormGroup>
           </form>
         </div>
@@ -69,7 +73,7 @@ function Citas() {
                 <TextField
                   className="pb-4"
                   sx={{input:{fontSize:15 , color:'white',fontWeight:'bold'}}}
-                  id="Nombre"
+                  id="Raza"
                   variant="filled"
                   />
                 
@@ -77,7 +81,7 @@ function Citas() {
                 <TextField
                   className="pb-4"
                   sx={{input:{fontSize:15 , color:'white',fontWeight:'bold'}}}
-                  id="Nombre"
+                  id="Sintomas"
                   variant="filled"
                   />
             </FormGroup>
